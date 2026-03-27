@@ -17,5 +17,5 @@ __pycache__/
 #notebooks
 *.ipynb_checkpoints/
 
-#othera
+#others
 .DS_Store
