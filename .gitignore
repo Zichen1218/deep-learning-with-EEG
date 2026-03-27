@@ -1,0 +1,21 @@
+#project in progress
+signals and data preprocessing/
+
+#data
+data/
+
+#models
+*.pt
+
+#wandb files
+**/wandb/
+
+#python cache
+__pycache__/
+*.pyc
+
+#notebooks
+*.ipynb_checkpoints/
+
+#othera
+.DS_Store
