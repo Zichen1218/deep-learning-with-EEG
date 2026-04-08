@@ -1,7 +1,9 @@
 #project in progress
-signals and data preprocessing/
+signals and eeg data exploring
+data preprocessing
 
 #data
+mne_data/
 data/
 
 #models
@@ -16,6 +18,8 @@ __pycache__/
 
 #notebooks
 *.ipynb_checkpoints/
+eeg_preprocessing_pipeline.ipynb
 
 #others
 .DS_Store
+BCICIV_2a_gdf.zip
