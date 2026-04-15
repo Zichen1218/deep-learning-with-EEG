@@ -1,6 +1,5 @@
 import numpy as np
 import mne
-from mne.decoding import CSP
 from scipy.io import loadmat
 from sklearn.model_selection import StratifiedShuffleSplit
 import matplotlib.pyplot as plt
@@ -182,28 +181,6 @@ def split_epochs(epochs_data, labels, test_size=0.2, random_state=42):
     y_train,y_test = labels[train_idx],labels[test_idx]
     return X_train, X_test, y_train, y_test
 
-
-def fit_csp(X_train, y_train, X_test, n_components=4):
-    """
-    Fit CSP on training data and transform both train and test.
-    
-    Args:
-        X_train:      np.ndarray, shape (n_train, n_channels, n_times)
-        y_train:      np.ndarray, shape (n_train,)
-        X_test:       np.ndarray, shape (n_test, n_channels, n_times)
-        n_components: int, CSP components per binary subproblem
-    
-    Returns:
-        X_train_csp: np.ndarray, shape (n_train, n_features)
-        X_test_csp:  np.ndarray, shape (n_test, n_features)
-        csp:         fitted CSP object
-    """
-    # YOUR CODE HERE
-    csp = mne.decoding.CSP(n_components=n_components,reg=None,log = True,transform_into='average_power')
-    csp.fit(X_train,y_train)
-    X_train_csp = csp.transform(X_train)
-    X_test_csp = csp.transform(X_test)
-    return X_train_csp,X_test_csp,csp
 
 def sliding_window(X, y, window_size=250, step_size=125):
     """
